@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/query_stu"
+        android:background="#f47a25"
+        android:text="查询
+学生
+信息"
+        android:textSize="28sp"
+        android:gravity="center"
+        app:layout_constraintRight_toLeftOf ="@+id/add_stu"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/add_stu"
+        android:background="#fcba5d"
+        android:text="增加
+学生
+信息"
+        android:textSize="28sp"
+        android:gravity="center"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintLeft_toRightOf="@+id/query_stu"/>
+
+    <TextView
+        android:id="@+id/del_stu"
+        android:background="#f8d29d"
+        android:text="删除
+学生
+信息"
+        android:textSize="28sp"
+        android:gravity="center"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/query_stu"/>
+    <TextView
+        android:id="@+id/modify_stu"
+        android:background="#ffe285"
+        android:text="更改
+学生
+信息"
+        android:textSize="28sp"
+        android:gravity="center"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/add_stu"
+        app:layout_constraintLeft_toRightOf="@+id/del_stu"/>
+
+</android.support.constraint.ConstraintLayout>
