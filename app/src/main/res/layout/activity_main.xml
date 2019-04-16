@@ -1,39 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/Silver">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <include  android:id="@+id/layout_bar" layout="@layout/layout_title"/>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="48.0dip"
+        android:background="#259B24" >
 
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/txt_titleStyle1"
+            android:text="@string/app_name"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
     <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" >
-       <GridLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:columnCount="2"
-           android:rowCount="2">
-          <Button
-              android:layout_columnWeight="1"
-              android:layout_rowWeight="1"/>
-           <Button
-               android:layout_columnWeight="1"
-               android:layout_rowWeight="1"/>
-           <Button
-               android:layout_columnWeight="1"
-               android:layout_rowWeight="1"/>
-           <Button
-               android:layout_columnWeight="1"
-               android:layout_rowWeight="1"/>
-       </GridLayout>
+        android:id="@+id/home_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
     </FrameLayout>
 
-    <include layout="@layout/layout_bottom"/>
-
+    <View android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:alpha="0.6"
+        android:background="@android:color/darker_gray"
+        />
+    <RadioGroup
+        android:id="@+id/radio_group_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/white"
+        >
+        <RadioButton
+            android:id="@+id/radio_button_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="首页"
+            android:drawableTop="@drawable/main"
+            style="@style/RadioGroupButtonStyle"
+            />
+        <RadioButton
+            android:id="@+id/radio_button_tools"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工具"
+            android:drawableTop="@drawable/tools"
+            style="@style/RadioGroupButtonStyle"
+            />
+        <RadioButton
+            android:id="@+id/radio_button_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关注"
+            android:drawableTop="@drawable/mine"
+            style="@style/RadioGroupButtonStyle"
+            />
+    </RadioGroup>
 </LinearLayout>
