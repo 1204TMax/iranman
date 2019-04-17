@@ -4,12 +4,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.fragment.TWO">
-
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TWO"
-        android:textSize="50dp"/>
+    <GridLayout
+        android:layout_width="455dp"
+        android:layout_height="759dp"
+        android:columnCount="2"
+        android:rowCount="6"
+        android:background="@color/gray">
+
+        <Button
+            android:id="@+id/QR"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="二维码扫描"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/A2"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="A2"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/A3"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="A3"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/A4"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="A4"
+            android:background="@drawable/fillet"/>
+        <Button
+            android:id="@+id/A5"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="A5"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/A6"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="A6"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/network"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="网络数据获取"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/B2"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="B2"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/B3"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="B3"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/B4"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="B4"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/B5"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="B5"
+            android:background="@drawable/fillet"/>
+
+        <Button
+            android:id="@+id/B6"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="B6"
+            android:background="@drawable/fillet"/>
+    </GridLayout>
 
 </FrameLayout>

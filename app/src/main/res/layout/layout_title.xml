@@ -3,21 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="48.0dip"
     android:background="#259B24" >
-    
-    <TextView
+
+    <Button
+        android:background="@drawable/titlebutton"
         android:id="@+id/txt_left"
-        style="good"
-        android:textSize="15sp"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/img_right"
         android:layout_alignParentLeft="true"
-         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
-        android:text="左边"
-        android:visibility="gone" />
+        android:layout_marginBottom="-25dp"
+        android:text="返回"
+        android:layout_centerVertical="true"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
 
      <ImageView
          android:id="@+id/Aimg_back"
-        android:layout_width="40dp"
-        android:layout_height="22dp"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
         android:layout_centerVertical="true"
         android:visibility="gone"
         android:contentDescription="@string/app_name"
@@ -38,15 +44,18 @@
         android:layout_marginRight="5dp"
         android:visibility="gone"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/fanhui" />
+        android:src="@drawable/fanhui"
+         tools:ignore="RtlHardcoded" />
     
-     <TextView
+     <Button
+         android:background="@drawable/titlebutton"
         android:id="@+id/txt_right"
         style="@style/txt_titleStyle1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:layout_alignParentRight="true"
          android:layout_centerVertical="true"
          android:text="右边"
-        android:layout_marginRight="10dp"  />
+        android:layout_marginRight="10dp"
+         tools:ignore="HardcodedText,RtlHardcoded" />
 
 </RelativeLayout>
