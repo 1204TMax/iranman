@@ -2,6 +2,11 @@ package com.example.iranman;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +14,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
+
+import org.w3c.dom.Text;
 
 import static android.content.ContentValues.TAG;
 
@@ -28,13 +39,18 @@ public class QRScan extends AppCompatActivity {
         Rtitle.setOnClickListener(new ButtonListener());
         Ltitle.setOnClickListener(new ButtonListener());
 
+        ZXingLibrary.initDisplayOpinion(this);
+        Intent intent = new Intent(QRScan.this, CaptureActivity.class);
+        startActivityForResult(intent, REQUEST_CODE);
     }
-
+    int REQUEST_CODE = 1;
     private class ButtonListener implements View.OnClickListener {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.txt_right:
                     Log.d(TAG, "这是扫码功能");
+                    Intent intent = new Intent(QRScan.this, CaptureActivity.class);
+                    startActivityForResult(intent, REQUEST_CODE);
                     break;
                 case R.id.txt_left:
                     Log.d(TAG, "返回");
@@ -44,5 +60,23 @@ public class QRScan extends AppCompatActivity {
             }
         }
     }
-
-}
+    @Override
+    public void  onActivityResult(int RequestCode,int resultCode,Intent data){
+        TextView t2 = findViewById(R.id.QR_T2);
+        if (RequestCode == REQUEST_CODE) {
+            //处理扫描结果（在界面上显示）
+            if (null != data) {
+                Bundle bundle = data.getExtras();
+                if (bundle == null) {
+                    return;
+                }
+                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+                    String result = bundle.getString(CodeUtils.RESULT_STRING);
+                    t2.setText(result);
+                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+                    t2.setText("解析失败，请重试");
+                }
+            }
+        }
+    }
+    }

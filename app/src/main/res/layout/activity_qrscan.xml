@@ -23,6 +23,8 @@
             android:id="@+id/QR_T2"
             android:layout_width="357dp"
             android:layout_height="195dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
             android:text="无数据"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
