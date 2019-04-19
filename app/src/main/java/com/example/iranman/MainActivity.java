@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.example.tool.DataGenerator;
+import com.example.utils.DataGenerator;
 
 public class MainActivity extends AppCompatActivity {
 private RadioGroup mRadioGroup;

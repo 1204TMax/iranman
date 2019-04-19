@@ -14,9 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.example.iranman.MainActivity;
-import com.example.iranman.QRScan;
+import com.example.tools.QRScan;
 import com.example.iranman.R;
-import com.example.tool.DataGenerator;
+import com.example.tools.weather;
+import com.example.utils.DataGenerator;
 
 public class TWO extends Fragment{
     private Fragment[]mFragments;
@@ -42,7 +43,9 @@ public class TWO extends Fragment{
 
         }
         Button QRScan = view.findViewById(R.id.QR);
+        Button Weather = view.findViewById(R.id.Weather);
         QRScan.setOnClickListener(new TWO.ButtonListener());
+        Weather.setOnClickListener(new TWO.ButtonListener());
         return view;
     }
     private class ButtonListener implements View.OnClickListener {
@@ -51,6 +54,11 @@ public class TWO extends Fragment{
                 case R.id.QR:
                     Intent intent = new Intent(getActivity(),QRScan.class);
                     startActivityForResult(intent,2);
+                    break;
+                case R.id.Weather:
+                    Log.d("1212","asdasdasd");
+                    Intent intent2 = new Intent(getActivity(), weather.class);
+                    startActivityForResult(intent2,2);
                     break;
             }
         }
