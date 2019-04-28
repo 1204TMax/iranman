@@ -1,14 +1,21 @@
 package com.example.iranman;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.fragment.TWO;
+import com.example.stu_manager.query_stu;
+import com.example.tools.QRScan;
 import com.example.utils.DataGenerator;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +30,7 @@ private RadioButton mRadioButtonHome;
         mFragments = DataGenerator.getFragments();
         initView();
     }
+
     public void initView(){
     mRadioGroup = findViewById(R.id.radio_group_button);
     mRadioButtonHome = findViewById(R.id.radio_button_main);

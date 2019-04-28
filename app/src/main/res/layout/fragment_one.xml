@@ -4,39 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <GridLayout
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="2"
-        android:rowCount="2">
-        <Button
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:id="@+id/stu_input"
-            android:text="增加学生"
-            android:textSize="30dp"
-            android:background="#89d3de"/>
-        <Button
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:id="@+id/del_stu"
-            android:text="删除学生"
-            android:textSize="30dp"
-            android:background="#22b6ed"/>
-        <Button
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:text="修改学生"
-            android:textSize="30dp"
-            android:id="@+id/modify_stu"
-            android:background="#b295c5"/>
-        <Button
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:id="@+id/query_stu"
-            android:text="查询学生"
-            android:textSize="30dp"
-            android:background="#c5c4c9"/>
-    </GridLayout>
-
+        android:text="ONE"
+        android:textSize="50dp"/>
 </android.support.constraint.ConstraintLayout>

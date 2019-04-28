@@ -5,13 +5,17 @@
     android:layout_height="match_parent"
     tools:context="com.example.fragment.TWO">
     <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+    </LinearLayout>
     <GridLayout
         android:layout_width="455dp"
         android:layout_height="759dp"
         android:columnCount="2"
         android:rowCount="6"
         android:background="@color/gray">
-
         <Button
             android:id="@+id/QR"
             android:layout_width="150dp"
@@ -24,14 +28,14 @@
             android:background="@drawable/fillet"/>
 
         <Button
-            android:id="@+id/A2"
+            android:id="@+id/studentmanager"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:text="A2"
+            android:text="学生管理系统"
             android:background="@drawable/fillet"/>
 
         <Button
@@ -85,7 +89,7 @@
             android:layout_column="1"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
-            android:text="天气预报"
+            android:text="定位"
             android:background="@drawable/fillet"/>
 
         <Button

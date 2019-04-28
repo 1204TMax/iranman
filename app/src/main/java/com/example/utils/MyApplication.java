@@ -2,6 +2,7 @@ package com.example.utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.widget.Toast;
 
 public class MyApplication extends Application {
     private static Context context;

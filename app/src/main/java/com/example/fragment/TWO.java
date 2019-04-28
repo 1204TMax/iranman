@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.example.iranman.MainActivity;
+import com.example.stu_manager.query_stu;
 import com.example.tools.QRScan;
 import com.example.iranman.R;
 import com.example.tools.weather;
@@ -44,8 +45,10 @@ public class TWO extends Fragment{
         }
         Button QRScan = view.findViewById(R.id.QR);
         Button Weather = view.findViewById(R.id.Weather);
+        Button Stumanage = view.findViewById(R.id.studentmanager);
         QRScan.setOnClickListener(new TWO.ButtonListener());
         Weather.setOnClickListener(new TWO.ButtonListener());
+        Stumanage.setOnClickListener(new TWO.ButtonListener());
         return view;
     }
     private class ButtonListener implements View.OnClickListener {
@@ -56,9 +59,13 @@ public class TWO extends Fragment{
                     startActivityForResult(intent,2);
                     break;
                 case R.id.Weather:
-                    Log.d("1212","asdasdasd");
+
                     Intent intent2 = new Intent(getActivity(), weather.class);
                     startActivityForResult(intent2,2);
+                    break;
+                case R.id.studentmanager:
+                    Intent intent3 = new Intent(getActivity(), query_stu.class);
+                    startActivityForResult(intent3,2);
                     break;
             }
         }
@@ -75,4 +82,5 @@ public class TWO extends Fragment{
             fragmentTransaction.replace(R.id.home_container, mTWO);
         }
     }
+
 }

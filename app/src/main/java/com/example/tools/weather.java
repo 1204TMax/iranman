@@ -1,6 +1,8 @@
 package com.example.tools;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.v4.app.ActivityCompat;
@@ -9,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,10 +20,12 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.example.iranman.R;
+import com.example.stu_manager.modify_stu;
+import com.example.stu_manager.query_stu;
+import com.example.utils.MyApplication;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import static android.content.ContentValues.TAG;
 
 public class weather extends AppCompatActivity {
@@ -35,6 +40,18 @@ public class weather extends AppCompatActivity {
         mLocationClient.registerLocationListener(new MyLocationListener());
         setContentView(R.layout.activity_weather);
         positionText = findViewById(R.id.city);
+        Button left = findViewById(R.id.txt_left);
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(20);
+                finish();
+            }
+        });
+        TextView right = findViewById(R.id.txt_right);
+        TextView title = findViewById(R.id.txt_title);
+        right.setText("");
+        title.setText("你的位置");
         List<String> permissionList = new ArrayList<>();
         if(ContextCompat.checkSelfPermission(weather.this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             permissionList.add(Manifest.permission.ACCESS_FINE_LOCATION);

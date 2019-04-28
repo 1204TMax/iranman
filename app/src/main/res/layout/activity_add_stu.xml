@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.stu_manager.add_stu">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray">
+        <include layout="@layout/layout_title" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:text="Add"
+            android:textSize="50dp"/>
+        <EditText
+            android:id="@+id/addname"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:inputType="textPersonName"
+            android:hint="用户名"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="178dp"
+            tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/gray">>
+            <EditText
+                android:id="@+id/addpwd"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:inputType="textPersonName"
+                android:hint="密码"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="178dp"
+                tools:ignore="MissingConstraints" />
+            <Button
+                android:id="@+id/subadd"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:text="提交"
+                android:background="@drawable/fillet"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
