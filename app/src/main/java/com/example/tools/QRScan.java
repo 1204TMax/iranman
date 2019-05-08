@@ -2,6 +2,11 @@ package com.example.tools;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +24,7 @@ import static android.content.ContentValues.TAG;
 public class QRScan extends AppCompatActivity {
     public static QRScan mactivity;
     public static Context mContext;
+    private final int REQUEST_CODE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,16 +39,16 @@ public class QRScan extends AppCompatActivity {
         Ltitle.setOnClickListener(new ButtonListener());
 
         ZXingLibrary.initDisplayOpinion(this);
-        Intent intent = new Intent(QRScan.this, CaptureActivity.class);
+        Intent intent = new Intent(QRScan.this, MyQR.class);
         startActivityForResult(intent, REQUEST_CODE);
     }
-    int REQUEST_CODE = 1;
+
     private class ButtonListener implements View.OnClickListener {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.txt_right:
                     Log.d(TAG, "这是扫码功能");
-                    Intent intent = new Intent(QRScan.this, CaptureActivity.class);
+                    Intent intent = new Intent(QRScan.this, MyQR.class);
                     startActivityForResult(intent, REQUEST_CODE);
                     break;
                 case R.id.txt_left:
@@ -68,8 +74,25 @@ public class QRScan extends AppCompatActivity {
                     t2.setText(result);
                 } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
                     t2.setText("解析失败，请重试");
+                    t2.setTextColor(Color.parseColor("#ef342a"));
                 }
             }
+            if(resultCode==303){
+                //处理扫描结果（在界面上显示）
+                if (null != data) {
+                    Bundle bundle = data.getExtras();
+                    if (bundle == null) {
+                        return;
+                    }
+                    String three = data.getStringExtra("albumqr");
+                    t2.setText(three);
+                }
+            } else if(resultCode==505){
+                String three = "解析失败，请重试";
+                t2.setText(three);
+                t2.setTextColor(Color.parseColor("#ef342a"));
+            }
         }
-    }
+        }
+
     }

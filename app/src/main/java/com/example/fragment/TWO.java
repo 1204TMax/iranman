@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import com.example.iranman.MainActivity;
 import com.example.stu_manager.query_stu;
+import com.example.tools.AlbumQR;
 import com.example.tools.QRScan;
 import com.example.iranman.R;
 import com.example.tools.weather;
@@ -29,23 +30,12 @@ public class TWO extends Fragment{
     @Override
     public  View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstate){
         View view = inflater.inflate(R.layout.fragment_two,container,false);
-        if (Build.VERSION.SDK_INT>22){
-            if (ContextCompat.checkSelfPermission(getActivity(),
-                    android.Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
-                //先判断有没有权限 ，没有就在这里进行权限的申请
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{android.Manifest.permission.CAMERA},1);
 
-            }else {
-                //说明已经获取到摄像头权限了 想干嘛干嘛
-            }
-        }else {
-//这个说明系统版本在6.0之下，不需要动态获取权限。
-
-        }
         Button QRScan = view.findViewById(R.id.QR);
         Button Weather = view.findViewById(R.id.Weather);
         Button Stumanage = view.findViewById(R.id.studentmanager);
+        Button Album = view.findViewById(R.id.Album);
+        Album.setOnClickListener(new TWO.ButtonListener());
         QRScan.setOnClickListener(new TWO.ButtonListener());
         Weather.setOnClickListener(new TWO.ButtonListener());
         Stumanage.setOnClickListener(new TWO.ButtonListener());
@@ -59,13 +49,16 @@ public class TWO extends Fragment{
                     startActivityForResult(intent,2);
                     break;
                 case R.id.Weather:
-
                     Intent intent2 = new Intent(getActivity(), weather.class);
                     startActivityForResult(intent2,2);
                     break;
                 case R.id.studentmanager:
                     Intent intent3 = new Intent(getActivity(), query_stu.class);
                     startActivityForResult(intent3,2);
+                    break;
+                case R.id.Album:
+                    Intent intent4 = new Intent(getActivity(), AlbumQR.class);
+                    startActivityForResult(intent4,2);
                     break;
             }
         }

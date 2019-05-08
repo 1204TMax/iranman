@@ -93,14 +93,14 @@
             android:background="@drawable/fillet"/>
 
         <Button
-            android:id="@+id/B2"
+            android:id="@+id/Album"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_row="1"
             android:layout_column="1"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
-            android:text="B2"
+            android:text="从相册选取二维码"
             android:background="@drawable/fillet"/>
 
         <Button

@@ -33,7 +33,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name="com.example.stu_manager.modify_stu"></activity>
+        <activity android:name="com.example.tools.AlbumQR"></activity>
+        <activity android:name="com.example.tools.MyQR" />
+        <activity android:name="com.example.stu_manager.modify_stu" />
         <activity android:name="com.example.stu_manager.del_stu" />
         <activity android:name="com.example.stu_manager.query_stu" />
         <activity android:name="com.example.stu_manager.add_stu" />
