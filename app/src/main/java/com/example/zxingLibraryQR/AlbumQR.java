@@ -1,19 +1,19 @@
-package com.example.tools;
+package com.example.zxingLibraryQR;
 
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Vibrator;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.iranman.R;
 import com.example.utils.ImageUtil;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AlbumQR extends AppCompatActivity {
     private static int REQUEST_IMAGE = 1;
@@ -41,6 +41,15 @@ public class AlbumQR extends AppCompatActivity {
                                 Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
                                 vibrator.vibrate(200);
                                 Toast.makeText(AlbumQR.this, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");// HH:mm:ss
+                                Date date = new Date(System.currentTimeMillis());
+                                String time = simpleDateFormat.format(date);
+                                QRrecord qr = new QRrecord();
+                                qr.setDelrecord(0);
+                                qr.setRecord(result);
+                                qr.setTime(time);
+                                qr.save();
+                                finish();
                             }
 
                             @Override

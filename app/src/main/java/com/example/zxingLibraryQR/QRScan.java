@@ -1,12 +1,9 @@
-package com.example.tools;
+package com.example.zxingLibraryQR;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,9 +12,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.iranman.R;
-import com.uuzuche.lib_zxing.activity.CaptureActivity;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static android.content.ContentValues.TAG;
 
@@ -72,6 +71,16 @@ public class QRScan extends AppCompatActivity {
                 if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
                     String result = bundle.getString(CodeUtils.RESULT_STRING);
                     t2.setText(result);
+                    t2.setTextColor(Color.parseColor("#1e272e"));
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");// HH:mm:ss
+                    Date date = new Date(System.currentTimeMillis());
+                    String time = simpleDateFormat.format(date);
+                    QRrecord qr = new QRrecord();
+                    qr.setDelrecord(0);
+                    qr.setRecord(result);
+                    qr.setTime(time);
+                    qr.save();
+                    Log.d("时间：",time);
                 } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
                     t2.setText("解析失败，请重试");
                     t2.setTextColor(Color.parseColor("#ef342a"));
@@ -86,6 +95,17 @@ public class QRScan extends AppCompatActivity {
                     }
                     String three = data.getStringExtra("albumqr");
                     t2.setText(three);
+                    t2.setTextColor(Color.parseColor("#1e272e"));
+                    /*获取当前系统时间并存储数据库*/
+                    @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");// HH:mm:ss
+                    Date date = new Date(System.currentTimeMillis());
+                    String time = simpleDateFormat.format(date);
+                    QRrecord qr = new QRrecord();
+                    qr.setDelrecord(0);
+                    qr.setRecord(three);
+                    qr.setTime(time);
+                    qr.save();
+                    Log.d("时间：",time);
                 }
             } else if(resultCode==505){
                 String three = "解析失败，请重试";
@@ -93,6 +113,6 @@ public class QRScan extends AppCompatActivity {
                 t2.setTextColor(Color.parseColor("#ef342a"));
             }
         }
-        }
-
     }
+
+}

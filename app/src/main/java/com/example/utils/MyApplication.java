@@ -4,7 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.widget.Toast;
 
-public class MyApplication extends Application {
+import org.litepal.LitePalApplication;
+
+public class MyApplication extends LitePalApplication {
     private static Context context;
     @Override
     public void onCreate() {
